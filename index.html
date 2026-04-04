@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>San Diego Walkability Analysis</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <!-- AGO -->
+    <script type="module" src="https://js.arcgis.com/5.0/embeddable-components/"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>San Diego Walkability Analysis</h1>
+    <h3 class="author">By Ethan Linley</h3>
+</header>
+
+<!-- INTRO -->
+<section class="content">
+    <h2>What is Walkability?</h2>
+    <p>
+        Walkability refers to how easily people can access daily needs such as food,
+        retail, education, and services within walking distance. Highly walkable areas
+        promote accessibility, reduce reliance on cars, and contribute to more livable
+        urban environments.
+    </p>
+</section>
+
+<!-- MAP 1 -->
+<section class="map-section">
+    <h2>Walkability Index</h2>
+    <div id="map"></div>
+</section>
+
+<!-- MAP 1 DESCRIPTION -->
+<section class="content">
+    <h2>Map Interpretation</h2>
+    <p>
+        This map displays a walkability index ranging from 0 (low walkability) to 1
+        (high walkability). Darker areas represent neighborhoods with greater
+        access to amenities and infrastructure that support walking.
+    </p>
+
+    <p>
+        Walkability is concentrated in central urban areas where density and land-use
+        diversity are highest. Peripheral and suburban regions show lower walkability
+        due to fewer nearby destinations and less connected infrastructure.
+    </p>
+</section>
+
+<!-- MAP 2 -->
+<section class="map-section">
+    <h2>Dataset Exploration</h2>
+
+    <arcgis-embedded-map
+        style="height:600px;width:100%;"
+        item-id="ef4252107db84f228ad6f55bf3a471ab"
+        theme="light"
+        legend-enabled
+        scroll-enabled
+        time-zone-label-enabled
+        center="-117.13152085232494,32.81857129975223"
+        scale="288895.277144"
+        portal-url="https://univredlands.maps.arcgis.com">
+    </arcgis-embedded-map>
+</section>
+
+<!-- MAP 2 DESCRIPTION -->
+<section class="content">
+    <h2>Interactive Data Exploration</h2>
+    <p>
+        This interactive map provides access to the full dataset used in the analysis,
+        including filtered road networks and categorized points of interest. Users can
+        explore how different components contribute to walkability patterns across the city.
+    </p>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="content">
+    <h2>Methodology</h2>
+    <p>
+        The walkability index was calculated at the census block group level using a
+        combination of spatial variables. Points of interest (POIs) were aggregated per
+        unit area, representing access to amenities such as food, retail, education, and
+        services.
+    </p>
+
+    <p>
+        Road networks were also analyzed, but only roads containing pedestrian infrastructure
+        (such as sidewalks) were included. The total length of these walkable roads was
+        calculated per unit area of each block group.
+    </p>
+
+    <p>
+        These two components were combined into an index, with POIs weighted at 60% and
+        walkable road coverage weighted at 40%. Population statistics were also incorporated
+        to account for differences in density and demand, resulting in a final normalized
+        walkability index ranging from 0 to 1.
+    </p>
+</section>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

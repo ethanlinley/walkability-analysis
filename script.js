@@ -63,7 +63,7 @@ function onEachFeature(feature, layer) {
 // LOAD DATA
 var geojson;
 
-fetch('data/blockgroups.geojson')
+fetch('blockgroups.geojson')
     .then(res => res.json())
     .then(data => {
 

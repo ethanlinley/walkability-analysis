@@ -1,4 +1,4 @@
-# San Diego Walkability Analysis
+# City of San Diego Walkability Analysis
 
 **By Ethan Linley**
 
@@ -36,7 +36,7 @@ The final website presents these results in two ways:
 2. An **ArcGIS Online interactive map** for exploring the full underlying dataset
 
 ## Live Web Map
-[View the live project website here](PASTE-YOUR-GITHUB-PAGES-LINK-HERE)
+[View the live project website here](https://ethanlinley.github.io/walkability-analysis/)
 
 ## Repository Structure
 ```text
